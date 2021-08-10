@@ -12,6 +12,8 @@ class Book {
     }
 
     generateElement() {
+        const that = this; // Used to reference 'this' inside of arrow functions
+
         const element = document.createElement("div");
         element.dataset.bookId = this.bookId;
         element.classList.add("card");
@@ -33,6 +35,10 @@ class Book {
         readButton.classList.add("read-btn");
         readButton.textContent = "READ";
         element.appendChild(readButton);
+        readButton.addEventListener("click", () => {
+            that.read = !that.read;
+            element.classList.toggle("read");
+        });
 
         const deleteButton = document.createElement("button");
         deleteButton.classList.add("del-btn");
