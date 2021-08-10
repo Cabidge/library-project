@@ -1,0 +1,7 @@
+.card {
+    background-color: rgb(240, 240, 240);
+}
+
+.card.read {
+    background-color: rgb(192, 243, 212);
+}
