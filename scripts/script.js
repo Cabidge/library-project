@@ -1,6 +1,6 @@
 const bookShelf = document.querySelector("#shelf");
 
-const books = [];
+let books = [];
 
 class Book {
     constructor(title, author, pages, read) {
@@ -38,6 +38,10 @@ class Book {
         deleteButton.classList.add("del-btn");
         deleteButton.textContent = "X";
         element.appendChild(deleteButton);
+        deleteButton.addEventListener("click", () => {
+            books = books.filter(({ bookId }) => bookId !== this.bookId);
+            element.remove();
+        });
 
         return element;
     }
