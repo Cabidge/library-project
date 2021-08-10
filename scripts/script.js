@@ -1,3 +1,5 @@
+const bookShelf = document.querySelector("#shelf");
+
 const books = [];
 
 class Book {
@@ -49,6 +51,18 @@ function addBook(title, author, pages, read) {
         return;
     }
 
-    books.add(book);
+    books.push(book);
     return book;
 }
+
+function displayBooks() {
+    books.forEach((book) => {
+        const element = book.generateElement();
+        bookShelf.appendChild(element);
+    });
+}
+
+addBook("A Book of Cheeses", "Cheez Mahn", 329, false);
+addBook("The Story", "Mr. Author", 927, true);
+
+displayBooks();
