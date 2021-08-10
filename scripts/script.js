@@ -15,7 +15,6 @@ class Book {
         const that = this; // Used to reference 'this' inside of arrow functions
 
         const element = document.createElement("div");
-        element.dataset.bookId = this.bookId;
         element.classList.add("card");
         if (this.read) {
             element.classList.add("read");
