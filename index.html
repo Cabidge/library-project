@@ -11,5 +11,22 @@
     <body>
         <button id="add">+</button>
         <div id="shelf"></div>
+
+        <div id="add-window">
+            <form id="add-form">
+                <p>Add a Book:</p>
+                <input type="text" placeholder="Title" />
+                <input type="text" placeholder="Author" />
+                <input type="number" placeholder="Pages" />
+                <label for="check-read">
+                    Read?
+                    <input id="check-read" type="checkbox" />
+                </label>
+                <div id="add-btns">
+                    <button id="add-confirm" type="submit">Add Book</button>
+                    <button id="add-cancel">Cancel</button>
+                </div>
+            </form>
+        </div>
     </body>
 </html>
