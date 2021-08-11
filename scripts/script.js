@@ -96,3 +96,21 @@ function hideAddWindow() {
 
 addButton.addEventListener("click", showAddWindow);
 addWindow.cancel.addEventListener("click", hideAddWindow);
+
+function submitBook() {
+    const newBook = addBook(
+        addWindow.title.value || "UNTITLED",
+        addWindow.author.value || "UNKNOWN AUTHOR",
+        addWindow.pages.value || -1,
+        addWindow.read.checked
+    );
+
+    if (!newBook) {
+        return;
+    }
+
+    bookShelf.appendChild(newBook.generateElement());
+    hideAddWindow();
+}
+
+addWindow.confirm.addEventListener("click", submitBook);
