@@ -1,4 +1,14 @@
 const bookShelf = document.querySelector("#shelf");
+const addButton = document.querySelector("#add");
+const addWindow = {
+    main: document.querySelector("#add-window"),
+    title: document.querySelector("#add-title"),
+    author: document.querySelector("#add-author"),
+    pages: document.querySelector("#add-pages"),
+    read: document.querySelector("#add-read"),
+    confirm: document.querySelector("#add-confirm"),
+    cancel: document.querySelector("#add-cancel"),
+};
 
 let books = [];
 
@@ -75,3 +85,14 @@ addBook("A Book of Cheeses", "Cheez Mahn", 329, false);
 addBook("The Story", "Mr. Author", 927, true);
 
 displayBooks();
+
+function showAddWindow() {
+    addWindow.main.style.visibility = "visible";
+}
+
+function hideAddWindow() {
+    addWindow.main.style.visibility = "hidden";
+}
+
+addButton.addEventListener("click", showAddWindow);
+addWindow.cancel.addEventListener("click", hideAddWindow);
