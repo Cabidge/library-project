@@ -22,8 +22,6 @@ class Book {
     }
 
     generateElement() {
-        const that = this; // Used to reference 'this' inside of arrow functions
-
         const element = document.createElement("div");
         element.classList.add("card");
         if (this.read) {
@@ -45,7 +43,7 @@ class Book {
         readButton.textContent = "READ";
         element.appendChild(readButton);
         readButton.addEventListener("click", () => {
-            that.read = !that.read;
+            this.read = !this.read;
             element.classList.toggle("read");
         });
 
